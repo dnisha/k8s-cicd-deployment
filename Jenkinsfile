@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello World'
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/dnisha/todoApp-Backend.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/dnisha/k8s-cicd-deployment']])
                 sh 'mvn clean install -DskipTests'
             }
         }
