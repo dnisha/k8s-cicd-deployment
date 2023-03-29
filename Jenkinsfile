@@ -17,6 +17,7 @@ pipeline {
                      withDockerRegistry(credentialsId: 'docker-credential') {
                         try{
                             sh 'docker rmi dash04/java-app:v1'
+                            sh 'docker build -t dash04/java-app:v1 .'
                         }
                         catch(error){
                             sh 'docker build -t dash04/java-app:v1 .'
