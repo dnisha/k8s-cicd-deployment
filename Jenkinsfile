@@ -15,7 +15,7 @@ pipeline {
              steps {
                  script{
                      withDockerRegistry(credentialsId: 'docker-credential') {
-                                sh 'su -s ${USER}'
+                                sh 'su ubuntu'
                                 sh 'docker rmi dash04/java-app:v1'
                                 sh 'docker build -t dash04/java-app:v1 .'
                                 sh 'docker push dash04/java-app:v1'
