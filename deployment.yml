@@ -17,5 +17,6 @@ spec:
       containers:
         - name: java-app
           image: dash04/java-app:v1
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
