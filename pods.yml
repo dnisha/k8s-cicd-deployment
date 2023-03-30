@@ -9,4 +9,4 @@ spec:
     - name: webapp
       image: dash04/java-app:v1
       ports:
-        - containerPort: 8080
+        - containerPort: 8083
