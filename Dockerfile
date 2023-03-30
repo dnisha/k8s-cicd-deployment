@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:11
 EXPOSE 8080
-ADD target/ci-cd-backend-0.0.1-SNAPSHOT.jar springboot-k8s-demo.jar
-ENTRYPOINT ["java","-jar","/springboot-k8s-demo.jar"]
+COPY ./target/ci-cd-backend-0.0.1-SNAPSHOT app.jar
+CMD ["java","-jar","app.jar"]
