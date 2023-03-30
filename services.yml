@@ -1,12 +1,15 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: webapp
+  name: java-app
+  labels:
+    name: java-app
 spec:
-  selector:
-    app: webapp
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-  type: LoadBalancer   
+    - nodePort: 30163
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: java-app
+  type: NodePort
