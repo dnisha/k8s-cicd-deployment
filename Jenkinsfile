@@ -25,7 +25,7 @@ pipeline {
                             sh 'docker push dash04/java-app:v1'
                             sshagent(['my-k8s-server']) {
                             
-                            sh 'scp -o StrictHostKeyChecking=no services.yml pods.yml ubuntu@ip-172-31-45-174:/home/ubuntu/'
+                            sh 'scp -o StrictHostKeyChecking=no services.yml deployment.yml ubuntu@ip-172-31-45-174:/home/ubuntu/'
 
                             script{
                                 try{
